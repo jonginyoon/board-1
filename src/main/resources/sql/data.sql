@@ -1,0 +1,2 @@
+INSERT INTO article(title, content, author_id, created_at, updated_at) VALUES ('홍길동의 글', '홍길동 왔다 감.', 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP())
+INSERT INTO article(title, content, author_id, created_at, updated_at) VALUES ('임꺽정 올시다. 냉무!!', '.', 3, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP())
