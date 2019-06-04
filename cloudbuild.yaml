@@ -18,7 +18,7 @@ steps:
 
   - 'deployment/board' #deploy명 (어플리케이션 이름)깡통
 
-  - 'board-sha256=gcr.io/stoked-elixir-242309/board:latest' #위에 1,2,3 이름 동일하게!!(bono-test2)
+  - 'bono-test2-sha256=gcr.io/stoked-elixir-242309/board:latest' #위에 1,2,3 이름 동일하게!!(bono-test2)
 
   env:
 
