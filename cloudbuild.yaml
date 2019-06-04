@@ -1,0 +1,27 @@
+steps:
+
+- name: 'gcr.io/cloud-builders/docker'
+
+  args: ['build', '-t', 'gcr.io/stoked-elixir-242309/board', '.'] #1 bono-test2
+
+- name: 'gcr.io/cloud-builders/docker'
+
+  args: ['push', 'gcr.io/stoked-elixir-242309/board'] #2 bono-test2
+
+- name: 'gcr.io/cloud-builders/kubectl'
+
+  args: 
+
+  - 'set'
+
+  - 'image'
+
+  - 'deployment/board' #deploy명 (어플리케이션 이름)깡통
+
+  - 'board-sha256=gcr.io/stoked-elixir-242309/board:latest' #위에 1,2,3 이름 동일하게!!(bono-test2)
+
+  env:
+
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a' # 나의 클러스터 지역 (클러스터 누르고 확인)
+
+  - 'CLOUDSDK_CONTAINER_CLUSTER=bono-test-cluster' # k8s 클러스터 이름
